@@ -1,6 +1,8 @@
 trigger:
 - main
 
+pool: pool
+
 resources:
 - repo: self
 
@@ -13,8 +15,6 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: pool
     steps:
     - task: Docker@2
       displayName: Build an image
